@@ -9,7 +9,7 @@ const Menu = () => {
             <NavLink to="/">
                 <Button label="Главная страница" />
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/service">
                 <Button label="Страница услуг" />
             </NavLink>
         </Layout>
