@@ -1,17 +1,18 @@
+import React from "react";
 import { Button } from "@consta/uikit/Button";
 import { Layout } from "@consta/uikit/Layout";
-import React from "react";
 import { NavLink } from "react-router-dom";
+import style from "./Header.css";
 
 const Header = () => {
 
     return (
-        <Layout>
-            <NavLink to="/">
-                <Button label="ФИО" />
+        <Layout  className={style.Header}>
+            <NavLink to='/profile'>
+                <Button label='ФИО' />
             </NavLink>
-            <NavLink to="/">
-                <Button label="Вход" />
+            <NavLink to='/login'>
+                <Button label='Вход' />
             </NavLink>
         </Layout>
     )
