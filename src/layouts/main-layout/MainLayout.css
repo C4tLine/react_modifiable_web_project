@@ -1,0 +1,15 @@
+.MainLayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.divider {
+    margin: 8px 0;
+    border: 1px solid #4a90e2;
+}
+
+.button-group {
+    display: flex;
+    gap: 5px;
+}
+

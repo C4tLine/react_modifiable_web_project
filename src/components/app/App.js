@@ -8,6 +8,7 @@ import {cnMixSpace} from "@consta/uikit/MixSpace";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppRoute } from '../../const';
+
 import MainLayout from '../../layouts/main-layout/MainLayout';
 import MainPage from '../../pages/main-page/MainPage';
 import ServicePage from '../../pages/service-page/ServicePage';
@@ -24,28 +25,6 @@ const App = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-    <Attachment
-      fileName={'Скан паспорта'}
-      fileExtension={'jpg'}
-      withPictogram
-      fileDescription={"1.5 Mb 19.01.2020 10:12"}
-    />
-    <Button label={'Кнопка'}/>
-    <Card verticalSpace="xs" horizontalSpace="xs">
-      <Text>Отступы 'xs'</Text>
-      <Layout className={cnMixSpace}>
-        <Layout flex={1}>
-          <Text view="primary" size="m" lineHeight="m">
-            Это первый блок
-          </Text>
-        </Layout>
-        <Layout flex={2}>
-          <Text view="primary" size="m" lineHeight="m">
-            А это второй блок, он в два раза шире первого
-          </Text>
-        </Layout>
-      </Layout>
-    </Card>
   </Theme>);
 };
 
