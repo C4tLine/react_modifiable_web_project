@@ -1,18 +1,19 @@
 import React from "react";
 import { Button } from "@consta/uikit/Button";
 import { Layout } from "@consta/uikit/Layout";
-import { NavLink } from "react-router-dom";
-import style from "./Menu.css";
+import { Link } from "react-router-dom";
+
+import "./Menu.css";
 
 const Menu = () => {
     return (
-        <Layout className={style.Menu}>
-            <NavLink to="/">
-                <Button label="Главная страница" />
-            </NavLink>
-            <NavLink to="/service">
-                <Button label="Страница услуг" />
-            </NavLink>
+        <Layout flex={1} className="Menu">
+            <Link to="/" className="nav-button button-margin">
+                <Button label="Главная страница" className="nav-button" />
+            </Link>
+            <Link to="/services" className="nav-button button-margin">
+                <Button label="Услуги компании" className="nav-button" />
+            </Link>
         </Layout>
     )
 }
