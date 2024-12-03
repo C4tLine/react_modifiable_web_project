@@ -1,4 +1,4 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { Card } from "@consta/uikit/Card";
 import { Text } from "@consta/uikit/Text";
 import { Loader } from "@consta/uikit/Loader";
@@ -9,7 +9,6 @@ import './ServiceDetailPage.css';
 
 const ServiceDetailPage = () => {
   const [service, setService] = useState(null);
-  const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -27,15 +26,15 @@ const ServiceDetailPage = () => {
 
     const fetchServiceDetails = async () => {
       try {
-        const response = await fetch(`https://673423afa042ab85d1190055.mockapi.io/api/v1/services/${id}`);
+        const response = await fetch(`https://673423afa042ab85d1190055.mockapi.io/api/v1/services`);
         if (!response.ok) {
-          throw new Error('Не удалось загрузить услугу');
+          throw new Error('Failed to download the service');
         }
 
         const serviceData = await response.json();
         setService(serviceData);
       } catch (err) {
-        setError(err.message || 'Произошла ошибка при загрузке услуги');
+        setError(err.message || 'An error occurred while downloading the service');
       } finally {
         setLoading(false);
       }

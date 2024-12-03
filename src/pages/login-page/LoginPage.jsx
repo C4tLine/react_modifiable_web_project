@@ -55,7 +55,7 @@ const LoginPage = () => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Input login"
+            placeholder="Введите логин"
           />
         </div>
 
@@ -66,7 +66,7 @@ const LoginPage = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Input password"
+            placeholder="Введите пароль"
           />
         </div>
 
