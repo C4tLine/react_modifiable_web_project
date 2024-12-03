@@ -1,9 +1,4 @@
 .Menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-top: 1px solid #ddd;
-    width: 100%;
+    flex-direction: row;
 }

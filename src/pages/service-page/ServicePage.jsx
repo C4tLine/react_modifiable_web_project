@@ -5,7 +5,7 @@ import { Grid } from "@consta/uikit/Grid";
 import { Pagination } from "@consta/uikit/Pagination";
 import { Loader } from "@consta/uikit/Loader";
 
-import style from "./ServicePage.css";
+import "./ServicePage.css";
 
 const SERVICES_URL = "https://673423afa042ab85d1190055.mockapi.io/api/v1/services";
 
@@ -42,7 +42,7 @@ const ServicePage = () => {
 
   if (isLoading) {
     return (
-      <div className={style.loader}>
+      <div className="loader">
         <Loader size="m" />
       </div>
     );

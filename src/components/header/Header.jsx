@@ -2,12 +2,13 @@ import React from "react";
 import { Button } from "@consta/uikit/Button";
 import { Layout } from "@consta/uikit/Layout";
 import { NavLink } from "react-router-dom";
-import style from "./Header.css";
+
+import "./Header.css";
 
 const Header = () => {
 
     return (
-        <Layout  className={style.Header}>
+        <Layout  className="Header">
             <NavLink to='/profile'>
                 <Button label='ФИО' />
             </NavLink>

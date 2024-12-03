@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card } from "@consta/uikit/Card";
 import { Text } from "@consta/uikit/Text";
 import { Loader } from '@consta/uikit/Loader';
+
 import './MainPage.css';
 
 const SERVICES_URL = "https://673423afa042ab85d1190055.mockapi.io/api/v1/main";

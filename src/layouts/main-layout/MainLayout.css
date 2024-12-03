@@ -1,8 +1,3 @@
-.MainLayout {
-    display: flex;
-    flex-direction: row;
-}
-
 .divider {
     margin: 8px 0;
     border: 1px solid #4a90e2;
@@ -13,3 +8,33 @@
     gap: 5px;
 }
 
+.button-margin {
+    margin-right: 5px;
+}
+
+.button-margin:last-child {
+    margin-right: 0;
+}
+
+.nav-button {
+    background-color: white;
+    color: #5a98de;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #5a98de;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
