@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "@consta/uikit/Text";
+import { Loader } from '@consta/uikit/Loader';
 import { getToken } from "../../store/token";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +13,7 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
 
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -33,13 +34,13 @@ const ProfilePage = () => {
         });
 
         if (!response.ok) {
-          throw new Error("Не удалось загрузить информацию о пользователе");
+          throw new Error("User information could not be uploaded");
         }
 
         const userInfo = await response.json();
         dispatch(setUser(userInfo));
       } catch (err) {
-        setError(err.message || "Произошла ошибка при загрузке данных пользователя");
+        setError(err.message || "An error occurred while uploading user data");
       } finally {
         setLoading(false);
       }
@@ -48,8 +49,10 @@ const ProfilePage = () => {
     fetchUserInfo();
   }, [dispatch, navigate]);
 
-  if (loading) {
-    return <Text className="loading-text" size="l">Загрузка...</Text>;
+  if (isLoading) {
+    return (
+      <div className="loader"><Loader size="m" /></div>
+    );
   }
 
   if (error) {
@@ -63,8 +66,9 @@ const ProfilePage = () => {
           <Text className="user-name">{user.firstName} {user.lastName}</Text>
           <Text className="user-email" view="secondary">{user?.email}</Text>
           <Text className="user-details">Username: {user?.username}</Text>
-          <Text className="user-details">Phone: {user?.phone}</Text>
           <Text className="user-details">Age: {user?.age}</Text>
+          <Text className="user-details">Phone: {user?.phone}</Text>
+
         </div>
         {user.image && (
           <img

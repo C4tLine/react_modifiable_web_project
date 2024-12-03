@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 75vh;
     background-color: #f7f9fc;
 }
 
@@ -39,7 +39,7 @@
 
 .submit-button {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 16px;
 }
 
