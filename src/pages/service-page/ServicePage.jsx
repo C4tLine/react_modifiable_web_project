@@ -4,6 +4,8 @@ import { Text } from "@consta/uikit/Text";
 import { Grid } from "@consta/uikit/Grid";
 import { Pagination } from "@consta/uikit/Pagination";
 import { Loader } from "@consta/uikit/Loader";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./ServicePage.css";
 
@@ -14,10 +16,17 @@ const ServicePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
 
   const cardsPerPage = 9;
 
   useEffect(() => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
     const fetchData = async () => {
       setIsLoading(true);
       try {
@@ -35,7 +44,7 @@ const ServicePage = () => {
     };
 
     fetchData();
-  }, []);
+  }, [navigate, user]);
 
   const startIndex = (currentPage - 1) * cardsPerPage;
   const currentCards = allCards.slice(startIndex, startIndex + cardsPerPage);

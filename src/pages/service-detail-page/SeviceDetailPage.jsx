@@ -1,8 +1,8 @@
-import {useNavigate} from "react-router-dom";
 import { Card } from "@consta/uikit/Card";
 import { Text } from "@consta/uikit/Text";
 import { Loader } from "@consta/uikit/Loader";
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import {getToken} from "../../store/token";
 
 import './ServiceDetailPage.css';
