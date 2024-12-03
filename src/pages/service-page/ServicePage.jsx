@@ -15,7 +15,7 @@ const ServicePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState(null);
 
-  const cardsPerPage = 6; // Adjusted for better display in a grid
+  const cardsPerPage = 9;
 
   useEffect(() => {
     const fetchData = async () => {
